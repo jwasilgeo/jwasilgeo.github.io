@@ -45,9 +45,11 @@ a {
 
 @media screen and (max-width: 42em) {
   .btn {
-    display: block;
+    /*display: block;
     width: 100%;
     padding: 0.75rem;
+    font-size: 0.9rem; */
+    padding: 0.6rem 0.9rem;
     font-size: 0.9rem; }
     .btn + .btn {
       margin-top: 1rem;
@@ -61,15 +63,15 @@ a {
 
 @media screen and (min-width: 64em) {
   .page-header {
-    padding: 5rem 6rem; } }
+    padding: 1rem 6rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .page-header {
-    padding: 3rem 4rem; } }
+    padding: 1rem 4rem; } }
 
 @media screen and (max-width: 42em) {
   .page-header {
-    padding: 2rem 1rem; } }
+    padding: 1rem 1rem; } }
 
 .project-name {
   margin-top: 0;
@@ -203,6 +205,33 @@ a {
   background-color: #eff0f1;
   border: 0; }
 
+.main-content .jumbotron {
+  max-width: 820px;
+  color: white !important;
+  height: 85px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 25px 50px;
+  margin: 16px 0 32px 0;
+}
+
+.main-content .jumbotron-content {
+  color: white;
+  line-height: 1;
+  font-size: 2rem;
+  /*text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;*/
+  text-shadow:
+    2px 2px 1px #000,
+    -2px -2px 1px #000,
+    -2px 2px 1px #000,
+    2px -2px 1px #000;
+  text-decoration: none;
+}
+
 @media screen and (min-width: 64em) {
   .main-content {
     max-width: 64rem;
@@ -213,12 +242,20 @@ a {
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .main-content {
     padding: 2rem 4rem;
-    font-size: 1.1rem; } }
+    font-size: 1.1rem; }}
 
 @media screen and (max-width: 42em) {
   .main-content {
     padding: 2rem 1rem;
-    font-size: 1rem; } }
+    font-size: 1rem;
+  } 
+  .main-content .jumbotron {
+    padding: 30px 10px;
+  }
+  .main-content .jumbotron-content {
+    font-size: 1.4rem;
+  }
+}
 
 .site-footer {
   padding-top: 2rem;
@@ -234,12 +271,12 @@ a {
 
 @media screen and (min-width: 64em) {
   .site-footer {
-    font-size: 1rem; } }
+    font-size: 0.8rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .site-footer {
-    font-size: 1rem; } }
+    font-size: 0.8rem; } }
 
 @media screen and (max-width: 42em) {
   .site-footer {
-    font-size: 0.9rem; } }
+    font-size: 0.75rem; } }
