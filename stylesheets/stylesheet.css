@@ -58,7 +58,8 @@ a {
 .page-header {
   color: #fff;
   text-align: center;
-  background-color: #159957;
+  /*background-color: #159957;*/
+  background-color: #55809F;
   /*background-image: linear-gradient(120deg, #155799, #159957); }*/
   background-image: url('../images/custom-pattern.png'); }
 
@@ -220,6 +221,7 @@ text-shadow: 0.05em 0.05em 0.1em rgba(0,0,0,0.8);}
   background-position: center;
   padding: 25px 50px;
   margin: 16px 0 32px 0;
+  text-align: center
 }
 
 .main-content .jumbotron-content {
