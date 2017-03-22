@@ -82,7 +82,7 @@ a:hover {
   background-image: url('../images/hillshade.png');
   background-blend-mode: screen;
   background-position: 78% 28%;
-  /*background-size: cover;*/
+  background-size: cover;
 }
 
 .page-header .btn {
@@ -106,12 +106,14 @@ a:hover {
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .page-header {
     padding: 1rem 4rem;
+    background-size: inherit;
   }
 }
 
 @media screen and (max-width: 42em) {
   .page-header {
     padding: 1rem 1rem;
+    background-size: inherit;
   }
 }
 
