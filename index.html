@@ -149,19 +149,18 @@
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
   <script>
-    var html = d3.select('html'),
-      svg = d3.select('svg');
+    var svg = d3.select('svg');
 
     svg
-      .attr('width', html.node().clientWidth)
-      .attr('height', html.node().clientHeight);
+      .attr('width', window.innerWidth)
+      .attr('height', window.innerHeight);
 
-    var svgWidth = +svg.attr('width'),
-      svgHeight = +svg.attr('height');
+    var svgInitialWidth = +svg.attr('width'),
+      svgInitialHeight = +svg.attr('height');
 
     var randomNumberGenerator = d3.randomNormal(),
-      n = parseInt(svgWidth / 10), // data width
-      m = parseInt(svgHeight / 10), // data height
+      n = parseInt(svgInitialWidth / 10), // data width
+      m = parseInt(svgInitialHeight / 10), // data height
       values = [];
 
     // fill in the data array with random numbers within a normal distribution
@@ -178,7 +177,7 @@
         .thresholds(d3.range(0, 1.5, 0.5))(values)
       )
       .enter().append('path')
-      .attr('d', d3.geoPath(d3.geoIdentity().scale(svgWidth / n)))
+      .attr('d', d3.geoPath(d3.geoIdentity().scale(svgInitialWidth / n)))
       .style('fill', 'none')
       .style('stroke', function(d, idx, nodeList) {
         return d3.schemeBlues[nodeList.length][idx];
@@ -206,8 +205,8 @@
         // clear/reset the debounce
         resizeTimeout = null;
 
-        var translate = 'translate(' + (html.node().clientWidth - svgWidth) / 2 + ', ' + (html.node().clientHeight - svgHeight) / 2 + ')'
-        var scale = 'scale(' + (html.node().clientWidth / svgWidth) + ', ' + (html.node().clientHeight / svgHeight) + ')';
+        var translate = 'translate(' + (window.innerWidth - svgInitialWidth) / 2 + ', ' + (window.innerHeight - svgInitialHeight) / 2 + ')'
+        var scale = 'scale(' + (window.innerWidth / svgInitialWidth) + ', ' + (window.innerHeight / svgInitialHeight) + ')';
         svg.attr('transform', translate + ' ' + scale);
       }, 30)
     }
