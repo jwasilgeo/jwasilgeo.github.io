@@ -27,8 +27,6 @@
   </section>
 
   <section class="main-content">
-    <h2 id="projects">Projects and experiments</h2>
-
     <a href="https://github.com/sarahbellum/Canvas-Flowmap-Layer" class="jumbotron jumbotron-content" style="
         background-image:url('https://raw.githubusercontent.com/sarahbellum/Canvas-Flowmap-Layer/master/img/lineanimation.gif');
         background-position: 40% 50%;">
@@ -100,45 +98,34 @@
       Python Raster Functions
     </a>
 
-    <h2 id="about-me">A little blurb about yours truly</h2>
-
     <p class="stand-out">
       I'm a geospatial developer at Esri, with a strong academic background in raster and remote sensing time-series analysis.
     </p>
 
     <p class="stand-out">
-      Lately, I've been collaborating on making all kinds of compelling web mapping visualizations using SVG and Canvas techniques in a variety of front-end JavaScript frameworks.
+      Lately, I've been collaborating with other geoviz geeks to to make compelling web mapping visualizations using SVG and Canvas techniques in a variety of front-end JavaScript frameworks.
     </p>
 
     <p class="stand-out">
-      Fun fact: When not doing this stuff, my mind is usually preoccupied with pizza and cats, of course.
+      Past affiliations include:
+      <ul class="stand-out">
+        <li>
+          <a href="https://clarklabs.org">Clark Labs</a>
+        </li>
+        <li>
+          <a href="http://www.clarku.edu/departments/international-development-community-environment/programs/gis-development-environment">Clark University GISDE</a>
+        </li>
+        <li>
+          <a href="http://cartography.oregonstate.edu">Cartography and Geovisualization Group</a> at Oregon State University
+        </li>
+        <li>
+          <a href="https://geography.as.uky.edu">University of Kentucky Geography</a>
+        </li>
+        <li>
+          <a href="http://www.nationalgeographic.com/">National Geographic Society</a>
+        </li>
+      </ul>
     </p>
-
-    <h2>Past affiliations</h2>
-
-    <ul class="stand-out">
-      <li>
-        <a href="https://clarklabs.org">Clark Labs</a>
-      </li>
-      <li>
-        <a href="http://www.clarku.edu/departments/international-development-community-environment/programs/gis-development-environment">Clark University GISDE</a>
-      </li>
-      <li>
-        <a href="http://cartography.oregonstate.edu">Cartography and Geovisualization Group</a> at Oregon State University
-      </li>
-      <li>
-        <a href="https://geography.as.uky.edu">University of Kentucky Geography</a>
-      </li>
-      <li>
-        <a href="http://www.nationalgeographic.com/">National Geographic Society</a>
-      </li>
-    </ul>
-
-    <footer class="site-footer">
-      <span class="site-footer-credits">
-        <a href="https://giphy.com/gifs/excited-dancing-dkGhBWE3SyzXW/tile"><strong>Thanks for surfin'</strong></a> on over here.
-      </span>
-    </footer>
 
   </section>
 
@@ -152,11 +139,11 @@
     var svg = d3.select('svg');
 
     svg
-      .attr('width', window.innerWidth)
-      .attr('height', window.innerHeight);
+      .attr('width', '100%')
+      .attr('height', '100%');
 
-    var svgInitialWidth = +svg.attr('width'),
-      svgInitialHeight = +svg.attr('height');
+    var svgInitialWidth = +svg.node().clientWidth,
+      svgInitialHeight = +svg.node().clientHeight;
 
     var randomNumberGenerator = d3.randomNormal(),
       n = parseInt(svgInitialWidth / 10), // data width
@@ -205,9 +192,10 @@
         // clear/reset the debounce
         resizeTimeout = null;
 
-        var translate = 'translate(' + (window.innerWidth - svgInitialWidth) / 2 + ', ' + (window.innerHeight - svgInitialHeight) / 2 + ')'
-        var scale = 'scale(' + (window.innerWidth / svgInitialWidth) + ', ' + (window.innerHeight / svgInitialHeight) + ')';
-        svg.attr('transform', translate + ' ' + scale);
+        // var translate = 'translate(' + (window.innerWidth - svgInitialWidth) / 2 + ' ' + (window.innerHeight - svgInitialHeight) / 2 + ')'
+        var scale = 'scale(' + (window.innerWidth / svgInitialWidth) + ' ' + (window.innerHeight / svgInitialHeight) + ')';
+        // svg.selectAll('path').attr('transform', translate + ' ' + scale);
+        svg.selectAll('path').attr('transform', scale);
       }, 30)
     }
 
