@@ -10,9 +10,9 @@
 
   <title>Jacob Wasilkowski</title>
 
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,700">
-  <link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
 
   <link rel="icon" href="favicon.ico">
 
@@ -21,8 +21,8 @@
 <body>
   <section class="page-header">
     <h1 class="project-name" id="pageHeader">Jacob Wasilkowski</h1>
-    <h1 class="project-tagline">Geospatial developer and pixel pusher</h1>
-    <a href="https://github.com/jwasilgeo" class="btn" title="Find me on Github @JWasilGeo">GitHub</a>
+    <h1 class="project-tagline">geospatial developer</h1>
+    <a href="https://github.com/jwasilgeo" class="btn" title="Find me on GitHub @JWasilGeo">GitHub</a>
     <a href="https://twitter.com/JWasilGeo" class="btn" title="Find me on Twitter @JWasilGeo">Twitter</a>
   </section>
 
@@ -31,6 +31,12 @@
         background-image:url('https://raw.githubusercontent.com/sarahbellum/Canvas-Flowmap-Layer/master/img/lineanimation.gif');
         background-position: 40% 50%;">
       Canvas Flowmap Layer
+    </a>
+
+    <a href="https://jwasilgeo.github.io/leaflet-experiments/aviation" class="jumbotron jumbotron-content" style="
+        background-image:url('./images/aviation-tracker.png');
+        background-position: 75% 20%;">
+      Flight Tracker
     </a>
 
     <a href="https://bl.ocks.org/jwasilgeo" class="jumbotron jumbotron-content">
@@ -99,7 +105,7 @@
     </a>
 
     <p class="stand-out">
-      I'm a geospatial developer at Esri, with a strong academic background in raster and remote sensing time-series analysis.
+      I'm a geospatial developer at Esri, with a strong academic background in raster GIS and remote sensing time-series analysis.
     </p>
 
     <p class="stand-out">
@@ -198,14 +204,15 @@
         svg.selectAll('path').attr('transform', scale);
       }, 30)
     }
-
   </script>
 
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-73443926-1', 'auto');
     ga('send', 'pageview');
