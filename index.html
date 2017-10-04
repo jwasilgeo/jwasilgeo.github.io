@@ -11,8 +11,7 @@
   <title>Jacob Wasilkowski</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/stylesheet.css">
+  <link rel="stylesheet" href="css/main.min.css">
 
   <link rel="icon" href="favicon.ico">
 
@@ -105,7 +104,7 @@
     </a>
 
     <p class="stand-out">
-      I'm a geospatial developer at Esri, with a strong academic background in raster GIS and remote sensing time-series analysis.
+      I'm a geospatial developer at Esri, with an academic background in raster GIS and remote sensing time-series analysis.
     </p>
 
     <p class="stand-out">
@@ -152,15 +151,11 @@
       svgInitialHeight = +svg.node().clientHeight;
 
     var randomNumberGenerator = d3.randomNormal(),
-      n = parseInt(svgInitialWidth / 10), // data width
-      m = parseInt(svgInitialHeight / 10), // data height
+      n = parseInt(svgInitialWidth / 10),
+      m = parseInt(svgInitialHeight / 10),
       values = [];
-
-    // fill in the data array with random numbers within a normal distribution
     values.length = n * m;
     for (var i = 0; i < values.length; ++i) {
-      // positive values only,
-      // just for the sake of making contour thresholds easier to experiment with
       values[i] = Math.abs(randomNumberGenerator());
     }
 
@@ -179,7 +174,6 @@
       .style('stroke-dasharray', '0, 600')
       .style('opacity', 0.75);
 
-    // march the contours into existence
     svg.selectAll('path')
       .transition()
       .duration(5000)
@@ -195,12 +189,16 @@
       }
 
       resizeTimeout = d3.timeout(function() {
-        // clear/reset the debounce
         resizeTimeout = null;
 
-        // var translate = 'translate(' + (window.innerWidth - svgInitialWidth) / 2 + ' ' + (window.innerHeight - svgInitialHeight) / 2 + ')'
-        var scale = 'scale(' + (window.innerWidth / svgInitialWidth) + ' ' + (window.innerHeight / svgInitialHeight) + ')';
-        // svg.selectAll('path').attr('transform', translate + ' ' + scale);
+        var scale = [
+          'scale(',
+          (window.innerWidth / svgInitialWidth),
+          ' ',
+          (window.innerHeight / svgInitialHeight),
+          ')'
+        ].join('');
+
         svg.selectAll('path').attr('transform', scale);
       }, 30)
     }
