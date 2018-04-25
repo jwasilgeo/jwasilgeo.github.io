@@ -115,7 +115,7 @@
     </p>
 
     <p class="stand-out">
-      I'm a geospatial developer at Esri, with a strong academic background in raster GIS and remote sensing time-series analysis.
+      I'm a geospatial developer at Esri, with an academic background in cartography and remote sensing time-series analysis.
     </p>    
 
     <p class="stand-out">
@@ -162,8 +162,8 @@
       svgInitialHeight = +svg.node().clientHeight;
 
     var randomNumberGenerator = d3.randomNormal(),
-      n = parseInt(svgInitialWidth / 10),
-      m = parseInt(svgInitialHeight / 10),
+      n = parseInt(svgInitialWidth / 8),
+      m = parseInt(svgInitialHeight / 8),
       values = [];
     values.length = n * m;
     for (var i = 0; i < values.length; ++i) {
@@ -182,13 +182,13 @@
         return d3.schemeBlues[nodeList.length][idx];
       })
       .style('stroke-width', 1)
-      .style('stroke-dasharray', '0, 600')
-      .style('opacity', 0.75);
+      .style('stroke-dasharray', '0, 1000')
+      .style('opacity', 1);
 
     svg.selectAll('path')
       .transition()
-      .duration(5000)
-      .style('stroke-dasharray', '600, 0')
+      .duration(8000)
+      .style('stroke-dasharray', '1000, 0')
       .style('opacity', 0.15);
 
     d3.select(window).on('resize', resize);
