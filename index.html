@@ -167,8 +167,8 @@
       .attr('width', '100%')
       .attr('height', '100%');
 
-    var svgInitialWidth = +svg.node().clientWidth,
-      svgInitialHeight = +svg.node().clientHeight;
+    var svgInitialWidth = svg.node().getBoundingClientRect().width,
+      svgInitialHeight = svg.node().getBoundingClientRect().height;
 
     var randomNumberGenerator = d3.randomNormal(),
       n = parseInt(svgInitialWidth / 8),
