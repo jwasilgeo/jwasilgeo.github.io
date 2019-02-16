@@ -11,7 +11,7 @@
   <title>Jacob Wasilkowski</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700">
-  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/main.css">
 
   <link rel="icon" href="favicon.ico">
 
@@ -20,7 +20,8 @@
 <body>
   <section class="page-header">
     <h1 class="project-name" id="pageHeader">Jacob Wasilkowski</h1>
-    <h1 class="project-tagline">geospatial developer</h1>
+    <h2 class="project-tagline">Geospatial Developer</h2>
+    <h2 class="project-tagline">AAG Cartography Specialty Group Board Member</h2>
     <a href="https://petrichor.studio" class="btn" title="Find me at Petrichor Studio">Petrichor Studio</a>
     <a href="https://github.com/jwasilgeo" class="btn" title="Find me on GitHub @JWasilGeo">GitHub</a>
     <a href="https://twitter.com/JWasilGeo" class="btn" title="Find me on Twitter @JWasilGeo">Twitter</a>
@@ -124,11 +125,11 @@
     </p>
 
     <p class="stand-out">
-      I'm a geospatial developer at Esri, with an academic background in cartography and remote sensing time-series analysis.
+      I'm a geospatial developer and serve as the <a href="https://aagcartography.wordpress.com/">Non-Academic Director on the AAG Cartography Specialty Group</a>.  My academic background focused heavily on cartography and remote sensing time-series analysis.
     </p>    
 
     <p class="stand-out">
-      Lately, I've been collaborating with other geoviz folks to make compelling web mapping and data visualizations using SVG and Canvas techniques in a variety of front-end JavaScript frameworks.
+      Lately, I've been enjoying collaborating with other geoviz folks to make compelling web maps and data visualizations in a variety of front-end JavaScript frameworks.  I also find writing scientific algorithms to analyze complex Earth observation data to be rewarding and exciting.
     </p>
 
     <p class="stand-out">
@@ -156,9 +157,7 @@
 
   <svg stroke-linejoin="round" stroke-linecap="round"></svg>
 
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="https://d3js.org/d3-contour.v1.min.js"></script>
-  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 
   <script>
     var svg = d3.select('svg');
@@ -171,8 +170,8 @@
       svgInitialHeight = svg.node().getBoundingClientRect().height;
 
     var randomNumberGenerator = d3.randomNormal(),
-      n = parseInt(svgInitialWidth / 8),
-      m = parseInt(svgInitialHeight / 8),
+      n = parseInt(svgInitialWidth / 11),
+      m = parseInt(svgInitialHeight / 11),
       values = [];
     values.length = n * m;
     for (var i = 0; i < values.length; ++i) {
@@ -190,15 +189,16 @@
       .style('stroke', function(d, idx, nodeList) {
         return d3.schemeBlues[nodeList.length][idx];
       })
-      .style('stroke-width', 1)
+      .style('stroke-width', 1.2)
       .style('stroke-dasharray', '0, 1000')
-      .style('opacity', 1);
+      .style('opacity', 0.5);
 
     svg.selectAll('path')
       .transition()
+      .delay(750)
       .duration(8000)
       .style('stroke-dasharray', '1000, 0')
-      .style('opacity', 0.15);
+      .style('opacity', 0.125);
 
     d3.select(window).on('resize', resize);
 
