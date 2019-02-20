@@ -126,6 +126,10 @@
       Python Raster Functions
     </a>
 
+    <a href="https://github.com/jwasilgeo/presentations" class="jumbotron jumbotron-content">
+      Presentations
+    </a>
+
     <p class="stand-out">
       You can also find me at <a href="https://petrichor.studio">Petrichor Studio</a>!
     </p>
@@ -142,7 +146,10 @@
       Some of my work has been featured elsewhere at:
       <ul class="stand-out">
         <li>
-          <a href="https://codepen.io/spark/87">Codepen Spark: Melody, Maps, and Mood</a>
+          <a href="https://www.informationisbeautifulawards.com/showcase/2808-what-s-your-vote-worth">KANTAR Information is Beautiful Awards 2018 (Longlist)</a>
+        </li>
+        <li>
+          <a href="https://codepen.io/spark/87">CodePen Spark: Melody, Maps, and Mood</a>
         </li>
         <li>
           <a href="https://cartonerd.blogspot.com/2018/12/favourite-maps-from-2018.html">Kenneth Field: Favourite maps from 2018</a>
@@ -157,7 +164,7 @@
           <a href="https://vallandingham.me/multivariate_maps.html">Jim Vallandingham: Multivariate Map Collection</a>
         </li>
         <li>
-          <a href="https://googlemapsmania.blogspot.com/2017/04/the-leaflet-flowmap-layer.html">Maps Mania: The Leaflet Flowmap Layer </a>
+          <a href="https://googlemapsmania.blogspot.com/2017/04/the-leaflet-flowmap-layer.html">Maps Mania: The Leaflet Flowmap Layer</a>
         </li>
       </ul>
     </p>
@@ -169,16 +176,19 @@
           <a href="https://clarklabs.org">Clark Labs</a>
         </li>
         <li>
-          <a href="http://www.clarku.edu/departments/international-development-community-environment/programs/gis-development-environment">Clark University GISDE</a>
+          <a href="https://www.clarku.edu/academics/graduate/programs/masters/geographic-information-science/">Clark University IDCE GIS</a>
         </li>
         <li>
           <a href="https://web.archive.org/web/20171127084504/http://cartography.oregonstate.edu/">Cartography and Geovisualization Group at Oregon State University</a>
         </li>
         <li>
-          <a href="https://geography.as.uky.edu">University of Kentucky Geography</a>
+          <a href="https://en.wikipedia.org/wiki/GeoEye">GeoEye</a>
         </li>
         <li>
-          <a href="http://www.nationalgeographic.com/">National Geographic Society</a>
+          <a href="https://www.nationalgeographic.com/">National Geographic Society</a>
+        </li>
+        <li>
+          <a href="https://geography.as.uky.edu">University of Kentucky Geography</a>
         </li>
       </ul>
     </p>
@@ -220,14 +230,14 @@
         return d3.schemeBlues[nodeList.length][idx];
       })
       .style('stroke-width', 1.2)
-      .style('stroke-dasharray', '0, 1000')
+      .style('stroke-dasharray', '0, 2500')
       .style('opacity', 0.5);
 
     svg.selectAll('path')
       .transition()
       .delay(750)
       .duration(8000)
-      .style('stroke-dasharray', '1000, 0')
+      .style('stroke-dasharray', '2500, 0')
       .style('opacity', 0.125);
 
     d3.select(window).on('resize', resize);
