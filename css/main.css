@@ -230,6 +230,10 @@ a.jumbotron-content {
   }
 }
 
+li {
+  margin-bottom: 6px;
+}
+
 .petrichor.lazy-bg-loaded {
   background-image:url('https://petrichor.studio/wp-content/uploads/2017/12/petrichor_logo.png');
   background-position: 50% 35%;
