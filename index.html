@@ -17,15 +17,15 @@
 </head>
 
 <body>
-  <section class="page-header">
+  <header class="page-header">
     <h1 class="project-name" id="pageHeader">Jacob Wasilkowski</h1>
     <h2 class="project-tagline">Geospatial developer focused on web mapping, data visualization, and remote sensing</h2>
     <h2 class="project-tagline">AAG Cartography Specialty Group Non-Academic Director</h2>
     <a href="https://github.com/jwasilgeo" class="btn" title="Find me on GitHub @JWasilGeo">GitHub</a>
     <a href="https://twitter.com/JWasilGeo" class="btn" title="Find me on Twitter @JWasilGeo">Twitter</a>
-  </section>
+  </header>
 
-  <section class="main-content">
+  <main class="main-content">
     <a href="https://petrichor.studio/" class="jumbotron jumbotron-content petrichor lazy-bg">
       Petrichor Studio
     </a>
@@ -164,8 +164,7 @@
         </li>
       </ul>
     </p>
-
-  </section>
+  </main>
 
   <svg stroke-linejoin="round" stroke-linecap="round"></svg>
 
@@ -175,8 +174,10 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      // initialize yall image lazy loader
       yall();
 
+      // have some fun with d3js in the background
       var svg = d3.select('svg');
 
       svg
@@ -219,6 +220,7 @@
 
       d3.select(window).on('resize', resize);
 
+      // debounce resizing
       var resizeTimeout = null;
       function resize() {
         if (resizeTimeout && resizeTimeout._time) {
