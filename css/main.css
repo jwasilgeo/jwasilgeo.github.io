@@ -73,6 +73,7 @@ svg {
   color: white;
   background-color: rgb(96, 108, 113);
   background-color: rgba(96, 108, 113, 0.6);
+  margin-top: 1rem;
 }
 
 .page-header .btn:hover {
