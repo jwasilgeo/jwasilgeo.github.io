@@ -30,16 +30,24 @@
       Petrichor Studio
     </a>
 
+    <a href="https://jwasilgeo.github.io/esri-experiments/earth-at-night" class="jumbotron jumbotron-content ean lazy-bg">
+      Earth at Night
+    </a>
+
     <a href="https://petrichor.studio/2018/01/whatsyourvoteworth/" class="jumbotron jumbotron-content wyvw lazy-bg">
       What's Your Vote Worth?
     </a>
 
-    <a href="https://petrichor.studio/2018/05/formula1/" class="jumbotron jumbotron-content formula1 lazy-bg">
-      Formula 1 World Circuits
+    <a href="https://codepen.io/jwasilgeo/" class="jumbotron jumbotron-content codepen lazy-bg">
+      CodePen Experiments
     </a>
 
-    <a href="https://jwasilgeo.github.io/esri-experiments/earth-at-night" class="jumbotron jumbotron-content ean lazy-bg">
-      Earth at Night
+    <a href="https://github.com/jwasilgeo/pixels#charting" class="jumbotron jumbotron-content pixels-rs lazy-bg">
+      Pixels and Charts
+    </a>
+
+    <a href="https://petrichor.studio/2018/05/formula1/" class="jumbotron jumbotron-content formula1 lazy-bg">
+      Formula 1 World Circuits
     </a>
 
     <a href="https://github.com/sarahbellum/Canvas-Flowmap-Layer" class="jumbotron jumbotron-content cfl lazy-bg">
@@ -52,14 +60,6 @@
 
     <a href="https://jwasilgeo.github.io/leaflet-experiments/night-and-day/" class="jumbotron jumbotron-content nightday lazy-bg">
       Night and Day
-    </a>
-
-    <a href="https://codepen.io/jwasilgeo/" class="jumbotron jumbotron-content codepen lazy-bg">
-      CodePen Experiments
-    </a>
-
-    <a href="https://github.com/jwasilgeo/pixels#charting" class="jumbotron jumbotron-content pixels-rs lazy-bg">
-      Pixels and Charts
     </a>
 
     <a href="https://jwasilgeo.github.io/esri-experiments/iss-view" class="jumbotron jumbotron-content iss-view lazy-bg">
@@ -170,14 +170,14 @@
     </p>
   </main>
 
-  <svg stroke-linejoin="round" stroke-linecap="round"></svg>
+  <svg></svg>
 
   <script src="https://unpkg.com/yall-js@2.3.2/dist/yall.min.js"></script>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // initialize yall image lazy loader
       yall();
 
@@ -186,7 +186,9 @@
 
       svg
         .attr('width', '100%')
-        .attr('height', '100%');
+        .attr('height', '100%')
+        .style('stroke-linejoin', 'round')
+        .style('stroke-linecap', 'round');
 
       var svgInitialWidth = svg.node().getBoundingClientRect().width,
         svgInitialHeight = svg.node().getBoundingClientRect().height;
@@ -208,17 +210,17 @@
         .enter().append('path')
         .attr('d', d3.geoPath(d3.geoIdentity().scale(svgInitialWidth / n)))
         .style('fill', 'none')
-        .style('stroke', function(d, idx, nodeList) {
+        .style('stroke', function (d, idx, nodeList) {
           return d3.schemeBlues[nodeList.length][idx];
         })
         .style('stroke-width', 1.2)
         .style('stroke-dasharray', '0, 2500')
-        .style('opacity', 0.4);
+        .style('opacity', 0.3);
 
       svg.selectAll('path')
         .transition()
-        .delay(750)
-        .duration(6000)
+        .delay(1000)
+        .duration(7500)
         .style('stroke-dasharray', '2500, 0')
         .style('opacity', 0.1);
 
@@ -231,7 +233,7 @@
           return;
         }
 
-        resizeTimeout = d3.timeout(function() {
+        resizeTimeout = d3.timeout(function () {
           resizeTimeout = null;
 
           var scale = [
