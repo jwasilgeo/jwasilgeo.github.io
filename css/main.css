@@ -8,11 +8,11 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #606c71;
+  /* color: #606c71; */
   overflow-x: hidden;
 }
 
-.stand-out {
+a {
   font-weight: bold;
 }
 
@@ -125,7 +125,7 @@ svg {
 }
 
 .project-tagline {
-  margin-top: 0;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   font-weight: bold;
 }
@@ -133,14 +133,12 @@ svg {
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-tagline {
-    margin-bottom: 1rem;
     font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 42em) {
   .project-tagline {
-    margin-bottom: 0.5rem;
     font-size: 1.25rem;
   }
 }
@@ -212,6 +210,16 @@ a.jumbotron-content {
     padding: 2rem 4rem;
     font-size: 1.1rem;
   }
+
+  a .iib-2019 {
+    left: -45% !important;
+  }
+
+  a .iib-2018 {
+    left: -40% !important;
+    height: 70px !important;
+    top: -31px !important;
+  }
 }
 
 @media screen and (max-width: 42em) {
@@ -219,16 +227,45 @@ a.jumbotron-content {
     padding: 2rem 1rem;
     font-size: 1rem;
   }
+
   .main-content .jumbotron {
     padding: 30px 10px;
   }
+
   .main-content .jumbotron-content {
     font-size: 1.4rem;
     line-height: 5.25rem;
   }
+
   a.jumbotron-content {
     padding: 20px 0;
   }
+
+  a .iib-2019 {
+    left: -36% !important;
+    height: 140px !important;
+    top: -110px !important;
+  }
+
+  a .iib-2018 {
+    left: 0 !important;
+    height: 70px !important;
+    top: -30px !important;
+  }
+}
+
+a .iib-2019 {
+  left: -47%;
+  position: relative;
+  height: 170px;
+  top: -128px;
+}
+
+a .iib-2018 {
+  left: -40.8%;
+  position: relative;
+  height: 80px;
+  top: -76px;
 }
 
 li {
