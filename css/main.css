@@ -5,7 +5,8 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   /* color: #606c71; */
@@ -29,11 +30,12 @@ svg {
   background-color: rgba(255, 255, 255, 0.08);
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   font-size: 1.1rem;
-  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 
-.btn+.btn {
+.btn + .btn {
   margin-left: 1rem;
 }
 
@@ -60,7 +62,7 @@ svg {
     padding: 0.6rem 0.9rem;
     font-size: 0.9rem;
   }
-  .btn+.btn {
+  .btn + .btn {
     margin-top: 1rem;
   }
 }
@@ -83,20 +85,22 @@ svg {
 
 @media screen and (min-width: 64em) {
   .page-header {
-    padding: 1rem 6rem;
+    padding: 2rem 6rem 0rem 6rem;
+    max-width: 64rem;
+    margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .page-header {
-    padding: 1rem 4rem;
+    padding: 2rem 4rem 0 4rem;
     background-size: inherit;
   }
 }
 
 @media screen and (max-width: 42em) {
   .page-header {
-    padding: 1rem 1rem;
+    padding: 2rem 1rem 0 1rem;
     background-size: inherit;
   }
 }
@@ -130,7 +134,6 @@ svg {
   font-weight: bold;
 }
 
-
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-tagline {
     font-size: 1.5rem;
@@ -151,12 +154,17 @@ svg {
   max-width: 100%;
 }
 
-.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
   color: #159957;
-  color: #B52A1D;
+  color: #b52a1d;
 }
 
 .main-content p {
@@ -171,7 +179,8 @@ svg {
   padding: 25px 50px;
   margin: 16px 0 32px 0;
   text-align: center;
-  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 .main-content a.jumbotron {
@@ -182,10 +191,7 @@ svg {
   color: white;
   line-height: 5.75rem;
   font-size: 2rem;
-  text-shadow:
-    -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
   text-decoration: none;
   background-color: black;
@@ -273,80 +279,80 @@ li {
 }
 
 .petrichor.lazy-bg-loaded {
-  background-image:url('https://petrichor.studio/wp-content/uploads/2017/12/petrichor_logo.png');
+  background-image: url("https://petrichor.studio/wp-content/uploads/2017/12/petrichor_logo.png");
   background-position: 50% 35%;
   background-size: cover;
 }
 
 .wyvw.lazy-bg-loaded {
-  background-image:url('../images/whats-your-vote-worth.jpg');
+  background-image: url("../images/whats-your-vote-worth.jpg");
   background-position: 25% 50%;
 }
 
 .formula1.lazy-bg-loaded {
-  background-image:url('../images/f1.jpg');
+  background-image: url("../images/f1.jpg");
   background-position: 20% 40%;
 }
 
 .ean.lazy-bg-loaded {
-  background-image:url('https://raw.githubusercontent.com/jwasilgeo/esri-experiments/master/earth-at-night/screenshot.png');
+  background-image: url("https://raw.githubusercontent.com/jwasilgeo/esri-experiments/master/earth-at-night/screenshot.png");
   background-repeat: repeat-x;
   background-position: 50% 60%;
 }
 
 .cfl.lazy-bg-loaded {
-  background-image:url('https://raw.githubusercontent.com/sarahbellum/Canvas-Flowmap-Layer/master/img/lineanimation.gif');
+  background-image: url("https://raw.githubusercontent.com/sarahbellum/Canvas-Flowmap-Layer/master/img/lineanimation.gif");
   background-position: 40% 50%;
 }
 
 .aviation.lazy-bg-loaded {
-  background-image:url('../images/aviation-tracker.png');
+  background-image: url("../images/aviation-tracker.png");
   background-position: 75% 20%;
 }
 
 .nightday.lazy-bg-loaded {
-  background-image:url('https://raw.githubusercontent.com/jwasilgeo/leaflet-experiments/master/night-and-day/night-and-day-screenshot.png');
+  background-image: url("https://raw.githubusercontent.com/jwasilgeo/leaflet-experiments/master/night-and-day/night-and-day-screenshot.png");
   background-position: 50% 20%;
   background-size: cover;
 }
 
 .codepen.lazy-bg-loaded {
-  background-image:url('../images/codepen-jwasilgeo.png');
+  background-image: url("../images/codepen-jwasilgeo.png");
   background-size: cover;
 }
 
 .pixels-rs.lazy-bg-loaded {
-  background-image:url('../images/pixels-rs.png');
+  background-image: url("../images/pixels-rs.png");
   background-size: cover;
   background-position: 50% 78%;
 }
 
 .iss-view.lazy-bg-loaded {
-  background-image:url('https://raw.githubusercontent.com/jwasilgeo/esri-experiments/master/iss-view/solar-terminator.gif');
+  background-image: url("https://raw.githubusercontent.com/jwasilgeo/esri-experiments/master/iss-view/solar-terminator.gif");
   background-repeat: repeat-x;
   background-position: 0 33%;
   background-size: cover;
 }
 
 .atw.lazy-bg-loaded {
-  background-image:url('https://raw.githubusercontent.com/jwasilgeo/esri-experiments/master/around-the-world/screenshot.png');
+  background-image: url("https://raw.githubusercontent.com/jwasilgeo/esri-experiments/master/around-the-world/screenshot.png");
   background-size: cover;
 }
 
 .antipodes.lazy-bg-loaded {
-  background-image:url('https://raw.githubusercontent.com/jwasilgeo/esri-experiments/master/antipodes-2d/screenshot.png');
+  background-image: url("https://raw.githubusercontent.com/jwasilgeo/esri-experiments/master/antipodes-2d/screenshot.png");
   background-position: 50% 60%;
   background-size: cover;
 }
 
 .faroe.lazy-bg-loaded {
-  background-image:url('../images/faroe-islands-whaling.jpg');
+  background-image: url("../images/faroe-islands-whaling.jpg");
 }
 
 .ch.lazy-bg-loaded {
-  background-image:url('../images/choropleth-hillshade.jpg');
+  background-image: url("../images/choropleth-hillshade.jpg");
 }
 
 .prf.lazy-bg-loaded {
-  background-image:url('../images/faroe-islands.jpg');
+  background-image: url("../images/faroe-islands.jpg");
 }
