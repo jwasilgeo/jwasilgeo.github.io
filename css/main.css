@@ -278,12 +278,6 @@ li {
   margin-bottom: 6px;
 }
 
-.petrichor.lazy-bg-loaded {
-  background-image: url("https://petrichor.studio/wp-content/uploads/2017/12/petrichor_logo.png");
-  background-position: 50% 35%;
-  background-size: cover;
-}
-
 .wyvw.lazy-bg-loaded {
   background-image: url("../images/whats-your-vote-worth.jpg");
   background-position: 25% 50%;
